@@ -3,10 +3,12 @@ import asyncio
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 from decimal import Decimal
-
+import os 
+from dotenv import load_dotenv
+load_dotenv()
 # Set up your bot token
-bot_token = '7991575231:AAHybU6exZCmRgHk-kKQt22QvveVad2POp8'
-chat_id = '6478834401'  # Use your chat ID here
+bot_token = os.getenv('BOT_TOKEN')
+chat_id = os.getenv('CHANNEL_ID')  # Use your chat ID here
 
 # Function to fetch the current price of any cryptocurrency
 def get_crypto_price(coin_name: str):
